@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 name: Owasp ZAP Integration with Github Actions
 
 on: [push]
@@ -17,4 +18,25 @@ jobs:
           docker_name: 'owasp/zap2docker-stable'
           target: 'http://testphp.vulnweb.com/'
           rules_file_name: '.zap/rules.tsv'
+=======
+name: Owasp ZAP Integration with Github Actions
+
+on: [push]
+
+jobs:
+  zap_scan:
+    runs-on: ubuntu-latest
+    name: Scan the webapplication
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: master
+      - name: ZAP Scan
+        uses: zaproxy/action-full-scan@v0.4.0
+        with:
+          docker_name: 'owasp/zap2docker-stable'
+          target: 'http://testphp.vulnweb.com/'
+          rules_file_name: '.zap/rules.tsv'
+>>>>>>> 2cd56369c3f3ad99267ca0a2402b50152aad861b
           cmd_options: '-a'
