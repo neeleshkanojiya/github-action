@@ -1,0 +1,9 @@
+name:Run shell command
+on:[push]
+jobs:
+  run-shell-command:
+  run-on:ubuntu latest
+  steps:
+    name:echo a string
+    run:echo "Hello this is first action file"
+
